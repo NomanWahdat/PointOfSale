@@ -20,13 +20,12 @@ function SupplierFrom({ isEdit, initValues, onSubmit }) {
   const { handleSubmit, reset } = methods;
 
   useEffect(() => {
-    console.log(initValues?.role);
+    console.log(initValues);
     reset({
-      username: initValues?.username,
+      name: initValues?.name,
       phoneNumber: initValues?.phoneNumber,
-      password: initValues?.password,
-      role: initValues?.role,
-      feature: initValues?.feature
+      shopName: initValues?.shopName,
+      city: initValues?.city,
     });
   }, [initValues]);
 

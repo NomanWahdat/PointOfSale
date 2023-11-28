@@ -13,6 +13,8 @@ import AddEmployee from "components/app/user/UserAdd";
 import UserEdit from "components/app/user/UserEdit";
 import UserList from "components/app/user/UserList";
 import SupplierAdd from "components/app/supplier/SupplierAdd";
+import SupplierEdit from "components/app/supplier/SupplierEdit";
+import SupplierList from "components/app/supplier/SupplierList";
 
 const Layout = () => {
   const { isAuthenticated } = useSelector(store => store.user);
@@ -51,6 +53,14 @@ const Layout = () => {
             <Route
               path={routes.add_supplier}
               element={<SupplierAdd />}
+            />
+            <Route
+              path={routes.edit_supplier}
+              element={<SupplierEdit />}
+            />
+            <Route
+              path={routes.list_supplier}
+              element={<SupplierList />}
             />
           </Route>
         )}

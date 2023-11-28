@@ -38,6 +38,11 @@ export const updatePassword = async (data, header) => {
   );
 };
 
+export const updateSupplier = async (data, header, key) => {
+  return axios(config(data, "/editSupplier", header, key));
+};
+
+
 export const updateInvoice = async (data, header) => {
   return axios(
     config(

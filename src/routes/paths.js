@@ -21,7 +21,7 @@ const routes = {
   account: "/account",
 
   add_supplier: "/add-supplier",
-  edit_supplier: "/edit-supplier/:edit",
+  edit_supplier: "/edit-supplier/:_id",
   list_supplier: "/list-supplier"
 };
 export default routes;

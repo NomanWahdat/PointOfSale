@@ -56,6 +56,12 @@ export const adminRoutes = {
           active: true,
           roles: []
         },
+        {
+          label: "List supplier",
+          to: routes.list_supplier,
+          active: true,
+          roles: []
+        }
       ]
     }
   ]

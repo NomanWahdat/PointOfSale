@@ -30,6 +30,17 @@ export const getUsersByType = async (data, header) => {
   );
 };
 
+export const getSupplierList = async (header, key) => {
+  console.log("KKK");
+  return axios(config(null,"/supplierList" ,header, key));
+};
+
+export const getSupplierByID = async (data, header, key) => {
+  return axios(
+    config(data, "/supplierList?_id=" + data._id, header, key)
+  );
+};
+
 export const getUsersByID = async (data, header, key) => {
   return axios(
     config(data, "/UserList?_id=" + data._id, header, key)
@@ -39,6 +50,8 @@ export const getUsersByID = async (data, header, key) => {
 export const getUserList = async (header, key) => {
   return axios(config(null, "/UserList", header, key));
 };
+
+
 export const getRateList = async header => {
   return axios(config(null, "/rate-list", header));
 };
@@ -84,7 +97,7 @@ export const getCustomerList = async header => {
 };
 
 export const getCustomerById = async (data, header) => {
-  return axios(config(null, "/customer-list?id=" + data.id, header));
+  return axios(config(null, "/customer-list?_id=" + data.id, header));
 };
 
 export const getProductById = async (data, header) => {
