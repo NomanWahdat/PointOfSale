@@ -22,6 +22,27 @@ export const adminRoutes = {
         USER_TYPE.PRODUCTION_UNIT
       ]
     },
+    {
+      label: "Employee",
+      icon: "layer-group",
+      value: 2,
+      active: true,
+      roles: [USER_TYPE.ADMIN, USER_TYPE.PRODUCTION_HEAD],
+      children: [
+        {
+          label: "Add employee",
+          to: routes.add_employee,
+          active: true,
+          roles: []
+        },
+        {
+          label: "List Employee",
+          to: routes.list_employee,
+          active: true,
+          roles: []
+        }
+      ]
+    }
   ]
 };
 
