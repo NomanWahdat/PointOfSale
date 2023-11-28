@@ -1,0 +1,212 @@
+.invoice-id {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 17px;
+  /* identical to box height, or 131% */
+
+  display: flex;
+  align-items: center;
+
+  /* Primary */
+
+  color: #f35369;
+}
+
+.invoice-name {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 17px;
+  color: #5d6e82;
+}
+
+.invoice-header {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.invoice-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  margin: 1.5rem 4rem;
+  gap: 32px;
+  background: #ffffff;
+  box-shadow: 0px 5.86923px 11.7385px rgba(65, 69, 88, 0.1),
+    0px 2.51538px 5.03077px rgba(0, 0, 0, 0.07);
+}
+.invoice-issue {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px 20px;
+  margin: 1.5rem 4rem;
+  gap: 32px;
+  background: #ffffff;
+  box-shadow: 0px 5.86923px 11.7385px rgba(65, 69, 88, 0.1),
+    0px 2.51538px 5.03077px rgba(0, 0, 0, 0.07);
+}
+.invoice-add {
+  width: 70%;
+}
+
+.invoice-add > :nth-child(1) {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 42px;
+  color: #344050;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.invoice-add > :nth-child(2) {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 28px;
+  color: #344050;
+}
+
+.invoice-add > :nth-child(3) {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 14px;
+  color: #c7cbce;
+}
+
+.invoice-add > :nth-child(4) {
+  border: 0.3px solid #bdbdbd;
+  margin-bottom: 32px;
+}
+
+.invoice-add > :nth-child(5) {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 28px;
+  color: #344050;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.invoice-add > :nth-child(6) {
+  margin-bottom: 32px;
+}
+
+.invoice-add > :nth-child(7) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.invoice-form-h {
+  width: 49%;
+}
+
+.invoice-billing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+}
+.invoice-billing > :nth-child(1) {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 42px;
+  color: #344050;
+  margin-bottom: 10px;
+}
+
+.invoice-billing > :nth-child(2) {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #c7cbce;
+  margin-bottom: 10px;
+}
+
+.invoice-billing > :nth-child(3) {
+  border: 0.3px solid #bdbdbd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.invoice-billing > :nth-child(4) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.invoice-billing > :nth-child(5) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.invoice-billing > :nth-child(7) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.invoice-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+.invoice-items > :nth-child(1) {
+  border: 0.3px solid #bdbdbd;
+  width: 100%;
+}
+
+.invoice-billing-table {
+  width: 100%;
+}
+
+.add-billing1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+
+.add-billing2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.plus-icon-green {
+  color: #27ce6a;
+}
+
+.plus-icon-sm {
+  width: 1rem;
+  height: 0.7rem;
+  font-size: 0.5rem;
+
+  align-items: center;
+}
+
+.add-items {
+  display: flex;
+  justify-content: space-around;
+}

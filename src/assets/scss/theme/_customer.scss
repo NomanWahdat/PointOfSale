@@ -1,0 +1,124 @@
+.customer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.first-box,
+.second-box,
+.third-box,
+.forth-box,
+.fifth-box,
+.six-box {
+  background-color: #fff;
+  width: 60%;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  box-shadow: 0px 5.86923px 11.7385px rgba(65, 69, 88, 0.1),
+    0px 2.51538px 5.03077px rgba(0, 0, 0, 0.07);
+}
+
+.edt-horizontal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.edt-horizontal > * {
+  flex: 1 1;
+}
+
+.circular-image-center {
+  display: flex;
+  justify-content: center;
+  border: 50%;
+}
+
+.circular-image {
+  position: relative;
+  display: inline-block;
+}
+.circular-image > :nth-child(1) {
+  border-radius: 50%;
+  width: 7.5rem;
+  height: 7.5rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.circular-image > :nth-child(2) {
+  position: absolute;
+  z-index: 10;
+  left: 50px;
+  top: 50px;
+}
+
+.more-information {
+  display: flex;
+  justify-content: space-between;
+}
+
+.more-information > :nth-child(1) {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #363a60;
+}
+
+.second-box > :nth-child(3) {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 28px;
+  color: #344050;
+}
+
+.last-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.last-div > :nth-child(1) {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 28px;
+  color: #344050;
+}
+
+.last-div > :nth-child(2) {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  font-weight: 500;
+  font-size: 13px;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 1px 1.5px rgba(0, 0, 0, 0.07),
+    0px 2px 5px rgba(43, 45, 80, 0.08),
+    0px 0px 0px 1px rgba(43, 45, 80, 0.1);
+}
+
+.six-box {
+  padding: 1rem 2rem;
+}
+
+.camera-icon {
+  color: white;
+}

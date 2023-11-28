@@ -1,0 +1,49 @@
+// .react-tel-input .form-control {
+//   font-size: 16px;
+//   background: #ffffff;
+//   border: 1px solid #cacaca;
+//   border-radius: 5px;
+//   width: 300px;
+//   outline: none;
+//   padding: 18.5px 14px 18.5px 58px;
+//   transition: box-shadow ease 0.25s, border-color ease 0.25s;
+//   color: #495057;
+// }
+// .react-tel-input .flag-dropdown {
+//   outline: none;
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   padding: 0;
+//   border-radius: 3px 0 0 3px;
+// }
+.react-tel-input .form-control {
+  color: var(--falcon-input-color) !important;
+  background-color: var(--falcon-input-bg) !important;
+  background-clip: padding-box;
+  border: 1px solid var(--falcon-input-border-color) !important;
+  appearance: none;
+  width: 100% !important;
+  border-radius: 0.25rem !important;
+  padding: 5px 20px 5px 60px !important;
+  box-shadow: var(--falcon-box-shadow-inset) !important;
+  transition: border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+a {
+  color: #44B283;
+  text-decoration: none;
+}
+.horizontal-divider {
+  display: flex;
+  flex-direction: row;
+}
+
+.horizontal-divider:before,
+.horizontal-divider:after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 2px solid #e0e0e06e;
+  margin: auto;
+  margin-inline: 5px;
+}

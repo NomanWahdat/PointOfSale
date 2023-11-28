@@ -1,0 +1,26 @@
+/* -------------------------------------------------------------------------- */
+/*                                    Badge                                   */
+/* -------------------------------------------------------------------------- */
+
+@mixin badge-soft-variant($color) {
+  color: var(--#{$prefix}badge-soft-#{$color}-color);
+  background-color: var(
+    --#{$prefix}badge-soft-#{$color}-background-color
+  );
+  padding: 7px 5px;
+  &[href] {
+    @include hover-focus {
+      text-decoration: none;
+      color: var(--#{$prefix}badge-soft-#{$color}-color);
+      background-color: var(
+        --#{$prefix}badge-soft-#{$color}-background-color
+      );
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .badge-soft-#{$color} {
+    @include badge-soft-variant($color);
+  }
+}

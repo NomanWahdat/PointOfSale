@@ -1,0 +1,113 @@
+.staff {
+  margin: 20px;
+}
+
+/*-----------------------------------------------
+|            Add Staff
+-----------------------------------------------*/
+.addStaff-container {
+  display: flex;
+  justify-content: center;
+}
+.addStaff {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-block: 25px;
+  min-width: 50%;
+}
+.addStaff-card-button {
+  width: inherit;
+  padding: 0.8rem;
+}
+.addStaff-button {
+  width: fit-content;
+  align-self: center;
+}
+
+.addStaff-list {
+  gap: 10px;
+}
+.addStaff-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 50px 30px;
+}
+
+/*-----------------------------------------------
+|            Add Staff Permission
+-----------------------------------------------*/
+.addStaffPermission {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addStaffPermission-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+
+  h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #363a60;
+    margin: 0;
+  }
+  img {
+    width: 20px;
+    height: 17px;
+    filter: invert(48%) sepia(10%) saturate(5368%) hue-rotate(310deg)
+      brightness(96%) contrast(99%);
+  }
+}
+.addStaffPermission-switch {
+  display: flex;
+  flex: 2;
+  justify-content: end;
+  align-items: center;
+}
+
+.modal-QR-header {
+  display: flex;
+  width: 100%;
+  gap: 2px;
+  h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18.6139px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #363a60;
+    margin: 0;
+  }
+}
+.modal-QR-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  align-items: center;
+  h3 {
+    margin: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18.4946px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+
+    /* Secondary */
+
+    color: #363a60;
+  }
+}

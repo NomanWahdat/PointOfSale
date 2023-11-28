@@ -1,0 +1,119 @@
+.text-heading-28 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 42px;
+  color: #222e3c;
+}
+.text-heading-19 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 28px;
+  color: #222e3c;
+}
+.text-heading-13 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  color: #222e3c;
+}
+.text-13 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  color: #9fa0a2;
+}
+.t-underline {
+  text-decoration: underline;
+}
+.invalid-feedback-custom {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 75%;
+  color: #e63757;
+  font-family: $font-family-sans-serif;
+}
+.text-counter {
+  margin: 0;
+  font-size: 10px;
+  color: white;
+  background: #3bb376;
+  text-align: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+.invoice-title {
+  width: 170px;
+  height: 42px;
+
+  /* Heading/H3 */
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 42px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: flex-end;
+
+  /* Gray Shades/bg-900 */
+
+  color: #344050;
+}
+
+.invoice-subheading {
+  width: 173px;
+  height: 29px;
+
+  /* Heading/H5 */
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 28px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: flex-end;
+
+  /* Gray Shades/bg-900 */
+
+  color: #344050;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.invoice-business-info {
+  width: 504px;
+  height: 14px;
+
+  /* Draft 16/14 Regular */
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 14px;
+  /* identical to box height, or 88% */
+
+  display: flex;
+  align-items: flex-end;
+
+  /* Soft colors/bg-soft-dark */
+
+  color: #c7cbce;
+}

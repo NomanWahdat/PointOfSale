@@ -1,0 +1,86 @@
+.subscription-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.subscription,
+.subscription-h {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+  gap: 24px;
+  background: #ffffff;
+  box-shadow: 0px 5.86923px 11.7385px rgb(65 69 88 / 10%),
+    0px 2.51538px 5.03077px rgb(0 0 0 / 7%);
+  border-radius: 15px;
+}
+
+.subscription-h {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.subscription-h > :nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5rem;
+}
+
+.activesubscriptiontxt {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  margin-left: 0.2rem;
+  /* Dark Nevy */
+
+  color: var(--#{$prefix}$dark-nevy);
+}
+
+.trialpackagestxt {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+
+  color: var(--#{$prefix}$secondary);
+}
+
+.yourmonthlytxt {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 14px;
+
+  color: var(--#{$prefix}$soft-badge-color-light);
+}
+
+.cancelbtn {
+  background: rgba(54, 58, 96, 0.16);
+  color: var(--#{$prefix}$secondary);
+}
+
+.edt-width {
+  width: 370px;
+}
+
+.btn-pay-now {
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+  border-radius: 0.9rem;
+}

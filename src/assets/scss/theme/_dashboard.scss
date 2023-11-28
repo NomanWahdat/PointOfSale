@@ -1,0 +1,268 @@
+/*-----------------------------------------------
+|   Dashboard
+-----------------------------------------------*/
+.file-thumbnail {
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  // display: inline-block;
+  margin-right: map_get($spacers, 2);
+}
+.dashboard-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+.dashboard-item-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #33475b;
+}
+.dashboard-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 5px;
+  background: #ffffff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  &:hover {
+    background: #f9fafd;
+  }
+}
+.deposit-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    display: flex;
+    align-items: center;
+  }
+}
+.deposit-status-img {
+  margin-left: 10px;
+}
+@media (max-width: 800px) {
+  .deposit-status {
+    span {
+      font-size: 7px;
+    }
+  }
+}
+
+/*-----------------------------------------------
+|             E-commerce
+-----------------------------------------------*/
+// .greetings-item {
+//   background-color: var(--#{$prefix}white);
+
+//   .dark & {
+//     background-color: var(--#{$prefix}card-bg);
+//   }
+// }
+
+/*-----------------------------------------------
+|             Project Management
+-----------------------------------------------*/
+.recent-activity-body-height {
+  height: 25rem;
+}
+
+.table-member-info {
+  min-width: 43rem;
+}
+
+.members-activity {
+  min-height: 22rem;
+}
+
+.table-running-project {
+  min-width: 43rem;
+}
+
+.hover-actions-trigger.btn-reveal-trigger {
+  .hover-actions {
+    right: 3.5rem;
+    [dir="rtl"] & {
+      right: 3.5rem;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Analytics                                 */
+/* -------------------------------------------------------------------------- */
+.chart-tab {
+  .nav-link {
+    &:not(.active):hover {
+      border-color: transparent !important;
+    }
+    &.active {
+      border-bottom: 2px solid var(--#{$prefix}primary) !important;
+      background-color: var(--#{$prefix}card-bg) !important;
+      outline: none !important;
+    }
+  }
+}
+.ask-analytics {
+  @include media-breakpoint-up(md) {
+    max-height: 426px;
+  }
+
+  .ask-analytics-item {
+    @include hover-focus {
+      background: var(--#{$prefix}gray-100);
+    }
+  }
+}
+/* -------------------------------------------------------------------------- */
+/*                                  CRM                                       */
+/* -------------------------------------------------------------------------- */
+.table-recent-leads {
+  min-width: 38rem;
+}
+
+.tab-active-caret {
+  .nav-link {
+    color: var(--#{$prefix}gray-600) !important;
+    font-size: map-get($font-sizes, "-1") !important;
+    font-weight: $font-weight-medium !important;
+    font-family: $font-family-sans-serif !important;
+    &.active {
+      color: var(--#{$prefix}primary) !important;
+      border-bottom: 0 !important;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        bottom: -6px;
+        left: 45%;
+        transform: rotate(45deg);
+        background: var(--#{$prefix}card-bg);
+        border-radius: 0.125rem;
+        border-width: 0 1px 1px 0;
+        border-style: solid;
+        border-color: $dropdown-border-color;
+      }
+    }
+  }
+}
+
+// Used in crm deal forecast card
+html[dir="rtl"] .rtl-row-reverse {
+  flex-direction: row-reverse;
+}
+/* -------------------------------------------------------------------------- */
+/*                                 STORE                                     */
+/* -------------------------------------------------------------------------- */
+.store-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 80px;
+  background: #ffffff;
+  box-shadow: 0px 0.920133px 9.20133px rgba(0, 0, 0, 0.1);
+  border-radius: 4.60067px;
+}
+.store {
+  display: flex;
+  flex-direction: column;
+  background: #f9fafd;
+  border-radius: 5.5208px 5.5208px 0px 0px;
+}
+.store-container {
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  border-radius: 0px 0px 5.5208px 5.5208px;
+  padding: 20px;
+  justify-content: space-between;
+}
+.store-list {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.store-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17.4825px;
+  line-height: 26px;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 8px;
+
+  /* Gray Shades/bg-900 */
+
+  color: #344050;
+}
+.store-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.store-status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 3px 8px;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 7.63136px;
+  line-height: 9px;
+  /* identical to box height, or 120% */
+
+  display: flex;
+  align-items: center;
+
+  /* Theme Color/White */
+
+  color: #ffffff;
+
+  background: #00d27b;
+  border-radius: 3px;
+}
+.store-new {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background: #ffffff;
+  box-shadow: 0px 0.920133px 9.20133px rgba(0, 0, 0, 0.1);
+  border-radius: 4.60067px;
+}
+@media (max-width: 800px) {
+  .store-container {
+    flex-direction: column;
+  }
+  .store-list {
+    flex-direction: column;
+  }
+  .store-new {
+    margin-top: 10px;
+  }
+}
