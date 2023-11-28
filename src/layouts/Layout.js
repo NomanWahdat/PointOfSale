@@ -6,15 +6,9 @@ import routes from "../routes/paths";
 import AuthSimpleLayout from "./AuthSimpleLayout";
 import SimpleLogin from "../components/authentication/Login";
 import NotFound from "../components/pages/NotFound";
-import UserList from "components/app/user/UserList";
 import { useSelector } from "react-redux";
 import MainLayout from "./MainLayout";
 import Dashboard from "components/dashboard";
-import AddEmployee from "components/app/user/UserAdd";
-import UserEdit from "components/app/user/UserEdit";
-import SupplierAdd from "components/app/supplier/SupplierAdd";
-import SupplierEdit from "components/app/supplier/SupplierEdit";
-import SupplierList from "components/app/supplier/SupplierList";
 
 const Layout = () => {
   const { isAuthenticated } = useSelector(store => store.user);
@@ -38,7 +32,7 @@ const Layout = () => {
         {isAuthenticated && (
           <Route element={<MainLayout />}>
             <Route path={routes.dashboard} element={<Dashboard />} />
-                                                      
+
           </Route>
         )}
         {/*- ------------- Authentication ---------------------------  */}
