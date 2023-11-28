@@ -12,6 +12,7 @@ import Dashboard from "components/dashboard";
 import AddEmployee from "components/app/user/UserAdd";
 import UserEdit from "components/app/user/UserEdit";
 import UserList from "components/app/user/UserList";
+import SupplierAdd from "components/app/supplier/SupplierAdd";
 
 const Layout = () => {
   const { isAuthenticated } = useSelector(store => store.user);
@@ -46,6 +47,10 @@ const Layout = () => {
             <Route
               path={routes.edit_employee}
               element={<UserEdit />}
+            />
+            <Route
+              path={routes.add_supplier}
+              element={<SupplierAdd />}
             />
           </Route>
         )}

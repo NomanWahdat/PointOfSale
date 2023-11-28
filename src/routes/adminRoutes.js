@@ -42,6 +42,21 @@ export const adminRoutes = {
           roles: []
         }
       ]
+    },
+    {
+      label: "supplier",
+      icon: "layer-group",
+      value: 3,
+      active: true,
+      roles: [USER_TYPE.ADMIN, USER_TYPE.PRODUCTION_HEAD],
+      children: [
+        {
+          label: "Add supplier",
+          to: routes.add_supplier,
+          active: true,
+          roles: []
+        },
+      ]
     }
   ]
 };
