@@ -6,7 +6,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import routes from "routes/paths";
 import { toastError } from "helpers/toastError";
 import { useSelector } from "react-redux";
-import { updateCustomer } from "@EndPoint/putCalls";
 import adminRoutes from "routes/adminRoutes";
 import { updateSupplier } from "@EndPoint/putCalls";
 import { getSupplierByID } from "@EndPoint/getCalls";
@@ -33,7 +32,11 @@ export default function SupplierEdit() {
   }, []);
   const onSubmit = data => {
     try {
-      updateSupplier({ _id: _id, ...data }, "Bearer " + user.token, "1")
+      updateSupplier(
+        { _id: _id, ...data },
+        "Bearer " + user.token,
+        "1"
+      )
         .then(() => {
           toast.success("Customer is Updated", {
             theme: "success"
