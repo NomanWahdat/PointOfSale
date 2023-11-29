@@ -16,7 +16,7 @@ import SupplierAdd from "components/app/supplier/SupplierAdd";
 import SupplierEdit from "components/app/supplier/SupplierEdit";
 import SupplierList from "components/app/supplier/SupplierList";
 import ProductAdd from "components/app/product/ProductAdd";
-
+import Setting from "components/app/setting";
 const Layout = () => {
   const { isAuthenticated } = useSelector(store => store.user);
   const HTMLClassList =
@@ -67,6 +67,7 @@ const Layout = () => {
               path={routes.add_product}
               element={<ProductAdd />}
             />
+            <Route path={routes.setting} element={<Setting />} />
           </Route>
         )}
         {/*- ------------- Authentication ---------------------------  */}

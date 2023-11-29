@@ -67,13 +67,35 @@ export const adminRoutes = {
     {
       label: "Product",
       icon: "layer-group",
-      value: 3,
+      value: 4,
       active: true,
       roles: [USER_TYPE.ADMIN, USER_TYPE.PRODUCTION_HEAD],
       children: [
         {
           label: "Add product",
           to: routes.add_product,
+          active: true,
+          roles: []
+        },
+        {
+          label: "List product",
+          to: routes.list_product,
+          active: true,
+          roles: []
+        }
+      ]
+    },
+    {
+      label: "Setting",
+      icon: "layer-group",
+      value: 5,
+      active: true,
+      to: routes.setting,
+      roles: [USER_TYPE.ADMIN, USER_TYPE.PRODUCTION_HEAD],
+      children: [
+        {
+          label: "List Company",
+          to: routes.setting,
           active: true,
           roles: []
         },

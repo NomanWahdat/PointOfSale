@@ -26,6 +26,8 @@ const routes = {
 
   add_product: "/add-product",
   edit_product: "/edit-product/:_id",
-  list_product: "/list-product"
+  list_product: "/list-product",
+
+  setting: "/setting"
 };
 export default routes;

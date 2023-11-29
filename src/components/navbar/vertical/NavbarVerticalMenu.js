@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useContext, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Nav, Collapse } from "react-bootstrap";
 import NavbarVerticalMenuItem from "./NavbarVerticalMenuItem";
 import classNames from "classnames";
@@ -9,7 +9,7 @@ import AppContext from "context/Context";
 
 const CollapseItems = ({ route }) => {
   const { pathname } = useLocation();
-
+  const navigate = useNavigate();
   const openCollapse = childrens => {
     const checkLink = children => {
       if (children.to === pathname) {
@@ -30,6 +30,9 @@ const CollapseItems = ({ route }) => {
       <Nav.Link
         onClick={() => {
           setOpen(!open);
+          if (route.to) {
+            navigate(route.to);
+          }
         }}
         className={classNames("dropdown-indicator cursor-pointer", {
           "text-500": !route.active
@@ -53,7 +56,8 @@ CollapseItems.propTypes = {
     name: PropTypes.string.isRequired,
     icon: PropTypes.string,
     children: PropTypes.array.isRequired,
-    active: PropTypes.bool
+    active: PropTypes.bool,
+    to: PropTypes.string
   }).isRequired
 };
 
