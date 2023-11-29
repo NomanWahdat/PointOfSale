@@ -22,6 +22,10 @@ const routes = {
 
   add_supplier: "/add-supplier",
   edit_supplier: "/edit-supplier/:_id",
-  list_supplier: "/list-supplier"
+  list_supplier: "/list-supplier",
+
+  add_product: "/add-product",
+  edit_product: "/edit-product/:_id",
+  list_product: "/list-product"
 };
 export default routes;

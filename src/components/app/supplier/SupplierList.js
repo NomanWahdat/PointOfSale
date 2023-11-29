@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import routes from "routes/paths";
 import { toast } from "react-toastify";
-import { getUserList } from "@EndPoint/getCalls";
 import { getSupplierList } from "@EndPoint/getCalls";
 //import Import from "./import";
 
@@ -38,7 +37,7 @@ const SupplierList = () => {
       headerProps: { className: "pe-1 invoice-header" },
       cellProps: {
         className: "py-2"
-      },
+      }
     },
     {
       accessor: "city",

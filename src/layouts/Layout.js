@@ -15,6 +15,7 @@ import UserList from "components/app/user/UserList";
 import SupplierAdd from "components/app/supplier/SupplierAdd";
 import SupplierEdit from "components/app/supplier/SupplierEdit";
 import SupplierList from "components/app/supplier/SupplierList";
+import ProductAdd from "components/app/product/ProductAdd";
 
 const Layout = () => {
   const { isAuthenticated } = useSelector(store => store.user);
@@ -61,6 +62,10 @@ const Layout = () => {
             <Route
               path={routes.list_supplier}
               element={<SupplierList />}
+            />
+            <Route
+              path={routes.add_product}
+              element={<ProductAdd />}
             />
           </Route>
         )}
