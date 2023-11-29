@@ -95,7 +95,7 @@ export const adminRoutes = {
       children: [
         {
           label: "List Company",
-          to: routes.setting,
+          to: routes.list_company,
           active: true,
           roles: []
         },

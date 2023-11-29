@@ -20,13 +20,10 @@ function CompanyForm({ isEdit, initValues, onSubmit }) {
   const { handleSubmit, reset } = methods;
 
   useEffect(() => {
-    console.log(initValues?.role);
+    console.log(initValues);
     reset({
-      username: initValues?.username,
-      phoneNumber: initValues?.phoneNumber,
-      password: initValues?.password,
-      role: initValues?.role,
-      feature: initValues?.feature
+      name: initValues?.name,
+      phoneNumber: initValues?.phoneNumber
     });
   }, [initValues]);
 

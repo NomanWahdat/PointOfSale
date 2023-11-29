@@ -19,7 +19,7 @@ export const toastError = err => {
     }
   } else {
     toast.error(
-      err.response.data.message ||
+      err?.response?.data.message ||
         err.message ||
         err?.response?.data?.error,
       {

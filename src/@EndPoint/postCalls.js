@@ -18,3 +18,11 @@ const config = (data, URL, header = null, key = null) => {
 export const addUser = async (data, header, key) => {
   return axios(config(data, "/addUser", header, key));
 };
+
+export const addSupplier = async (data, header, key) => {
+  return axios(config(data, "/addSupplier", header, key));
+};
+
+export const addCompany = async (data, header, key) => {
+  return axios(config(data, "/addCompany", header, key));
+};

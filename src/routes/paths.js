@@ -28,6 +28,9 @@ const routes = {
   edit_product: "/edit-product/:_id",
   list_product: "/list-product",
 
-  setting: "/setting"
+  setting: "/setting",
+
+  edit_company: "/edit-company/:_id",
+  list_company: "/list-company"
 };
 export default routes;

@@ -17,6 +17,9 @@ import SupplierEdit from "components/app/supplier/SupplierEdit";
 import SupplierList from "components/app/supplier/SupplierList";
 import ProductAdd from "components/app/product/ProductAdd";
 import Setting from "components/app/setting";
+import CompanyList from "components/app/setting/company/CompanyList";
+import CompanyEdit from "components/app/setting/company/CompanyEdit";
+
 const Layout = () => {
   const { isAuthenticated } = useSelector(store => store.user);
   const HTMLClassList =
@@ -68,6 +71,14 @@ const Layout = () => {
               element={<ProductAdd />}
             />
             <Route path={routes.setting} element={<Setting />} />
+            <Route
+              path={routes.list_company}
+              element={<CompanyList />}
+            />
+            <Route
+              path={routes.edit_company}
+              element={<CompanyEdit />}
+            />
           </Route>
         )}
         {/*- ------------- Authentication ---------------------------  */}
