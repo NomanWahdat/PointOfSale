@@ -39,7 +39,8 @@ export default function SupplierEdit() {
       )
         .then(() => {
           toast.success("Customer is Updated", {
-            theme: "success"
+            theme: "success",
+            position: "bottom-left"
           });
           navigate(routes.list_supplier);
         })

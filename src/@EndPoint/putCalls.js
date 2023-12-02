@@ -26,3 +26,7 @@ export const updateSupplier = async (data, header, key) => {
 export const updateCompany = async (data, header, key) => {
   return axios(config(data, "/editCompany", header, key));
 };
+
+export const updateProduct = async (data, header, key) => {
+  return axios(config(data, "/editProduct", header, key));
+};

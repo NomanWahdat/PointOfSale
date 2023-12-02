@@ -53,3 +53,13 @@ export const getCompanyByID = async (data, header, key) => {
     config(data, "/companyList?_id=" + data._id, header, key)
   );
 };
+
+export const getProductList = async (header, key) => {
+  return axios(config(null, "/productList", header, key));
+};
+
+export const getProductByID = async (data, header, key) => {
+  return axios(
+    config(data, "/productList?_id=" + data._id, header, key)
+  );
+};

@@ -22,11 +22,10 @@ function ProductForm({ isEdit, initValues, onSubmit, feature }) {
   useEffect(() => {
     console.log(initValues?.role);
     reset({
-      username: initValues?.username,
-      phoneNumber: initValues?.phoneNumber,
-      password: initValues?.password,
-      role: initValues?.role,
-      feature: initValues?.feature
+      name: initValues?.name,
+      model: initValues?.model,
+      stockalert: initValues?.stockalert,
+      companyId: initValues?.companyId
     });
   }, [initValues]);
 
@@ -57,7 +56,7 @@ function ProductForm({ isEdit, initValues, onSubmit, feature }) {
         <Col md="6">
           <RHFSelect
             label={"company"}
-            name={"company"}
+            name={"companyId"}
             options={feature}
             groupClassName={"mb-3"}
             groupStyles={{ marginBottom: "3%" }}

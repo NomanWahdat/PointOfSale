@@ -15,11 +15,12 @@ import UserList from "components/app/user/UserList";
 import SupplierAdd from "components/app/supplier/SupplierAdd";
 import SupplierEdit from "components/app/supplier/SupplierEdit";
 import SupplierList from "components/app/supplier/SupplierList";
-import ProductAdd from "components/app/product/ProductAdd";
 import Setting from "components/app/setting";
 import CompanyList from "components/app/setting/company/CompanyList";
 import CompanyEdit from "components/app/setting/company/CompanyEdit";
-
+import ProductAdd from "components/app/product/ProductAdd";
+import ProductList from "components/app/product/ProductList";
+import ProductEdit from "components/app/product/productEdit";
 const Layout = () => {
   const { isAuthenticated } = useSelector(store => store.user);
   const HTMLClassList =
@@ -69,6 +70,14 @@ const Layout = () => {
             <Route
               path={routes.add_product}
               element={<ProductAdd />}
+            />
+            <Route
+              path={routes.list_product}
+              element={<ProductList />}
+            />
+            <Route
+              path={routes.edit_product}
+              element={<ProductEdit />}
             />
             <Route path={routes.setting} element={<Setting />} />
             <Route

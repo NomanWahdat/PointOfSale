@@ -11,10 +11,6 @@ const routes = {
   list_employee: "/employee-list",
   add_employee: "/add-employee",
 
-  product_add: "/product-add",
-  product_list: "/product-list",
-  product_edit: "/product-edit/:id",
-
   customer_add: "/customer-add",
   customer_list: "/customer-list",
   customer_edit: "/customer-edit/:id",

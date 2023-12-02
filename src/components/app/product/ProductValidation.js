@@ -4,7 +4,7 @@ import * as Yup from "yup";
 
 const ProductSchema = Yup.object().shape({
   name: Yup.string().required("Should not be empty"),
-  company: Yup.string().required("Should not be empty"),
+  companyId: Yup.string().required("Should not be empty"),
   model: Yup.string().required("Required Field"),
   stockalert: Yup.number()
     .required("Required Field")
