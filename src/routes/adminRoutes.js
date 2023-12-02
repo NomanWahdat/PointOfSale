@@ -90,6 +90,27 @@ export const adminRoutes = {
       ]
     },
     {
+      label: "Purchase",
+      icon: faCoins,
+      value: 4,
+      active: true,
+      roles: [USER_TYPE.ADMIN, USER_TYPE.PRODUCTION_HEAD],
+      children: [
+        {
+          label: "Add Bill",
+          to: routes.add_purchase,
+          active: true,
+          roles: []
+        },
+        {
+          label: "List Bill",
+          to: routes.list_purchase,
+          active: true,
+          roles: []
+        }
+      ]
+    },
+    {
       label: "Sale",
       icon: faCoins,
       value: 4,
@@ -98,13 +119,13 @@ export const adminRoutes = {
       children: [
         {
           label: "Add Bill",
-          to: routes.add_product,
+          to: routes.add_sale,
           active: true,
           roles: []
         },
         {
           label: "List Bill",
-          to: routes.list_product,
+          to: routes.list_sale,
           active: true,
           roles: []
         }

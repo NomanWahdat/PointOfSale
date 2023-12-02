@@ -21,6 +21,11 @@ import CompanyEdit from "components/app/setting/company/CompanyEdit";
 import ProductAdd from "components/app/product/ProductAdd";
 import ProductList from "components/app/product/ProductList";
 import ProductEdit from "components/app/product/productEdit";
+import AddBill from "components/app/purchase/AddBill";
+import BillList from "components/app/purchase/BillList";
+import Bill from "components/app/pos/addBill";
+import BillListt from "components/app/pos/BillList";
+
 const Layout = () => {
   const { isAuthenticated } = useSelector(store => store.user);
   const HTMLClassList =
@@ -88,6 +93,16 @@ const Layout = () => {
               path={routes.edit_company}
               element={<CompanyEdit />}
             />
+            <Route
+              path={routes.add_purchase}
+              element={<AddBill />}
+            />
+            <Route
+              path={routes.list_purchase}
+              element={<BillList />}
+            />
+            <Route path={routes.add_sale} element={<Bill />} />
+            <Route path={routes.list_sale} element={<BillListt />} />
           </Route>
         )}
         {/*- ------------- Authentication ---------------------------  */}

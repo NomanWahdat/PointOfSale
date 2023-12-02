@@ -1,0 +1,184 @@
+import {
+  FormProvider,
+  RHFControl,
+  RHFSelect
+} from "components/common/form";
+import React, { useEffect, useState } from "react";
+import IconButton from "components/common/IconButton";
+import PropTypes from "prop-types";
+import { Table } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { BillValidation } from "./BillValidation";
+import CardDropdown from "components/common/CardDropdown";
+import { Dropdown } from "react-bootstrap";
+
+function TableBody({
+  header,
+  onSubmit,
+  item,
+  setItem,
+  dropDownOption
+}) {
+  const methods = useForm({
+    mode: "onTouched",
+
+    reValidateMode: "onChange",
+
+    defaultValues: { quantityMethod: false },
+
+    resolver: BillValidation
+  });
+  const { handleSubmit, reset, watch } = methods;
+  const [total, setTotal] = useState(0);
+  const quantity = watch("quantity");
+  const rate = watch("rate");
+  useEffect(() => {
+    setTotal(quantity * rate);
+  }, [quantity, rate]);
+
+  const editRow = key => {
+    const updatedItem = [...item];
+    updatedItem.splice(key, 1);
+    reset({
+      quantity: item[key]?.quantity,
+      rate: item[key]?.rate,
+      _id: item[key]?._id.value,
+      disc: item[key]?.disc
+    });
+    console.log(item[key]?._id);
+    setItem(updatedItem);
+  };
+  const handleOnSubmit = data => {
+    reset({
+      _id: "",
+      quantity: 0,
+      rate: 0,
+      disc: 0
+    });
+    onSubmit(data);
+  };
+  return (
+    <FormProvider
+      methods={methods}
+      onSubmit={handleSubmit(handleOnSubmit)}
+    >
+      <Table className="w-100 table table-borderless">
+        <thead className="bg-200 text-900 md-4">
+          <tr>
+            {header.map((item, index) => {
+              return (
+                <th key={index} className={item.className}>
+                  {item.text}
+                </th>
+              );
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {item &&
+            item.map((data, key) => {
+              return (
+                <tr key={key}>
+                  <td className="align-middle text-center">
+                    {data?._id.label}
+                    <p>{data?.description}</p>
+                  </td>
+                  <td className="align-middle text-center col-sm-2">
+                    {data?.rate}
+                  </td>
+                  <td className="align-middle text-center col-sm-2">
+                    {data?.quantity}
+                  </td>
+                  <td className="align-middle text-center pb-3">
+                    {data?.disc} %
+                  </td>
+                  <td className="align-middle text-center pb-3">
+                    {data?.rate * data?.quantity} RS
+                  </td>
+                  <td className="align-middle text-center pb-4 w-25">
+                    <CardDropdown iconClassName="fs--1">
+                      <div className="py-2">
+                        <Dropdown.Item onClick={() => editRow(key)}>
+                          Edit
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                          onClick={() => deleteRow(key)}
+                        >
+                          Delete
+                        </Dropdown.Item>
+                      </div>
+                    </CardDropdown>
+                  </td>
+                </tr>
+              );
+            })}
+          <tr>
+            <td className="align-middle">
+              <RHFSelect
+                placeHolder="Enter Product"
+                name={"_id"}
+                className="pb-3"
+                options={dropDownOption}
+                requiredObject={true}
+              />
+            </td>
+            <td className="align-middle col-sm-2 px-4">
+              <RHFControl
+                placeHolder="0"
+                name="rate"
+                defaultValue={0}
+              />
+            </td>
+            <td className="align-middle col-sm-2 px-4">
+              <RHFControl
+                placeHolder="0"
+                name="quantity"
+                defaultValue={0}
+              />
+            </td>
+            <td className="align-middle text-center w-10">
+              <RHFControl placeHolder="0" name="disc" />
+            </td>
+            <td className="align-middle text-center pb-4">
+              {total} RS
+            </td>
+            <td className="align-middle text-center pb-4 w-1">
+              <IconButton
+                variant="falcon-default"
+                size="md"
+                icon="trash"
+                onClick={() => {
+                  reset({
+                    _id: "",
+                    quantity: 0,
+                    rate: 0,
+                    disc: 0
+                  });
+                }}
+                transform="shrink-3"
+              />
+              <IconButton
+                variant="falcon-default"
+                size="sx"
+                icon="plus"
+                type="submit"
+                transform="shrink-3"
+                className="ms-2 me-2"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </Table>
+    </FormProvider>
+  );
+}
+export default TableBody;
+
+TableBody.propTypes = {
+  header: PropTypes.array,
+  onSubmit: PropTypes.func,
+  setItem: PropTypes.func,
+  item: PropTypes.array,
+  product: PropTypes.func,
+  dropDownOption: PropTypes.array
+};

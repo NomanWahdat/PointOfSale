@@ -9927,6 +9927,9 @@ fieldset:disabled .tox .tox-dialog__footer .tox-button--secondary,
   --falcon-border-opacity: 1;
 }
 
+.w-10{
+  width: 10% !important;
+}
 .w-25 {
   width: 25% !important;
 }

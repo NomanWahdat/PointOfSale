@@ -18,6 +18,7 @@ export const RHFControl = ({
   iconOptions,
   selectedIcon,
   setSelectedIcon,
+  defaultValue,
   ...rest
 }) => {
   const { control } = useFormContext();
@@ -39,6 +40,7 @@ export const RHFControl = ({
               isInvalid={!!error}
               {...field}
               {...rest}
+              defaultValue={defaultValue}
             />
             {iconOptions && (
               <DropdownButton
@@ -77,5 +79,6 @@ RHFControl.propTypes = {
   startAddon: PropTypes.object,
   selectedIcon: PropTypes.string,
   setSelectedIcon: PropTypes.func,
+  defaultValue: PropTypes.any,
   iconOptions: PropTypes.array // Define prop type for iconOptions
 };

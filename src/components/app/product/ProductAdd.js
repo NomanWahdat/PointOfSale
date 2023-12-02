@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import ProductForm from "./ProductForm";
 import { useNavigate } from "react-router-dom";
-import adminRoutes from "routes/adminRoutes";
 import { addProduct } from "@EndPoint/postCalls";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";

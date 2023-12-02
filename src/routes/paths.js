@@ -27,6 +27,14 @@ const routes = {
   setting: "/setting",
 
   edit_company: "/edit-company/:_id",
-  list_company: "/list-company"
+  list_company: "/list-company",
+
+  add_purchase: "/add-purchase",
+  edit_purchase: "/edit-purchase",
+  list_purchase: "/list-purchase",
+
+  add_sale: "/add-sale/:_id",
+  edit_sale: "/edit-sale/:_id",
+  list_sale: "/list-sale"
 };
 export default routes;

@@ -52,6 +52,7 @@ export const RHFSelect = ({
   required,
   hasDummyOptions,
   noOptional,
+  requiredObject,
   ...rest
 }) => {
   const { control } = useFormContext();
@@ -93,9 +94,13 @@ export const RHFSelect = ({
             value={getSelectValue(value)}
             onChange={option => {
               if (isMulti) {
-                onChange(option.map(item => item.value));
+                onChange(
+                  option.map(item =>
+                    requiredObject ? item : item.value
+                  )
+                );
               } else {
-                onChange(option.value);
+                onChange(requiredObject ? option : option.value);
               }
             }}
             classNamePrefix="react-select"
@@ -144,5 +149,6 @@ RHFSelect.propTypes = {
   groupClassName: propTypes.string,
   required: propTypes.bool,
   hasDummyOptions: propTypes.bool,
-  noOptional: propTypes.bool
+  noOptional: propTypes.bool,
+  requiredObject: propTypes.bool
 };

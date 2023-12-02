@@ -25,7 +25,7 @@ function SupplierFrom({ isEdit, initValues, onSubmit }) {
       name: initValues?.name,
       phoneNumber: initValues?.phoneNumber,
       shopName: initValues?.shopName,
-      city: initValues?.city,
+      city: initValues?.city
     });
   }, [initValues]);
 
