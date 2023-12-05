@@ -1,6 +1,10 @@
 import { USER_TYPE } from "data/constants";
 import routes from "./paths";
-
+import {
+  faUserCog,
+  faBoxes,
+  faCoins
+} from "@fortawesome/free-solid-svg-icons";
 export const adminRoutes = {
   label: "Dashboard",
   labelDisable: true,
@@ -24,7 +28,7 @@ export const adminRoutes = {
     },
     {
       label: "Employee",
-      icon: "layer-group",
+      icon: "user",
       value: 2,
       active: true,
       roles: [USER_TYPE.ADMIN, USER_TYPE.PRODUCTION_HEAD],
@@ -45,7 +49,7 @@ export const adminRoutes = {
     },
     {
       label: "supplier",
-      icon: "layer-group",
+      icon: "users",
       value: 3,
       active: true,
       roles: [USER_TYPE.ADMIN, USER_TYPE.PRODUCTION_HEAD],
@@ -66,7 +70,7 @@ export const adminRoutes = {
     },
     {
       label: "Product",
-      icon: "layer-group",
+      icon: faBoxes,
       value: 4,
       active: true,
       roles: [USER_TYPE.ADMIN, USER_TYPE.PRODUCTION_HEAD],
@@ -86,8 +90,29 @@ export const adminRoutes = {
       ]
     },
     {
+      label: "Sale",
+      icon: faCoins,
+      value: 4,
+      active: true,
+      roles: [USER_TYPE.ADMIN, USER_TYPE.PRODUCTION_HEAD],
+      children: [
+        {
+          label: "Add Bill",
+          to: routes.add_product,
+          active: true,
+          roles: []
+        },
+        {
+          label: "List Bill",
+          to: routes.list_product,
+          active: true,
+          roles: []
+        }
+      ]
+    },
+    {
       label: "Setting",
-      icon: "layer-group",
+      icon: faUserCog,
       value: 5,
       active: true,
       to: routes.setting,
