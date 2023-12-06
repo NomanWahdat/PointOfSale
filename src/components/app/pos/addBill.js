@@ -1,4 +1,4 @@
-import { getCustomerList,getSupplierList } from "@EndPoint/getCalls";
+import { getSupplierList } from "@EndPoint/getCalls";
 import { FormProvider, RHFSelect } from "components/common/form";
 import { toastError } from "helpers/toastError";
 import React, { useEffect, useMemo, useState } from "react";

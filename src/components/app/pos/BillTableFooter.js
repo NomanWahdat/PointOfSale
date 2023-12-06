@@ -6,13 +6,13 @@ import { Button, Col, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { BillFooterValidation } from "./BillValidation";
 //import { setBill } from "@EndPoint/postCalls";
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 
 export default function BillTableFooter({ item, customerName }) {
   const icons = ["PKR", "%"];
   const [selectedIcon, setSelectedIcon] = useState(icons[0]);
   const [totalBill, setTotalBill] = useState(0);
-  const { user } = useSelector(store => store.user);
+  //const { user } = useSelector(store => store.user);
 
   useEffect(() => {
     setValue("discount", customerName?.discount);
@@ -63,6 +63,7 @@ export default function BillTableFooter({ item, customerName }) {
           discountType = 1; // Set to 1 if the selected icon is "$"
         } else if (selectedIcon === "%") {
           discountType = 2; // Set to 2 if the selected icon is "%"
+          console.log(data, discountType);
         }
 
         //await setBill(

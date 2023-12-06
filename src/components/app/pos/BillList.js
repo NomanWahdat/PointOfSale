@@ -3,7 +3,7 @@ import AdvanceTable from "components/common/advance-table/AdvanceTable";
 import AdvanceTableHeader from "components/common/advance-table/AdvanceTableHeader";
 import AdvanceTablePagination from "components/common/advance-table/AdvanceTablePagination";
 import AdvanceTableWrapper from "components/common/advance-table/AdvanceTableWrapper";
-import { toastError } from "helpers/toastError";
+//import { toastError } from "helpers/toastError";
 import React, { useEffect, useState } from "react";
 import { Card, Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -80,6 +80,7 @@ const BillList = () => {
   const [bills, setBills] = useState([]);
   const { user } = useSelector(store => store.user);
   const getBills = () => {
+    setBills([]);
     //getBill("Bearer " + user.token)
     //  .then(res => {
     //    console.log(res.data.billList);
