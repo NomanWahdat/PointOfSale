@@ -18,7 +18,7 @@ export default function CompanyAdd() {
           theme: "colored",
           position: "bottom-left"
         });
-        navigate(routes.list_employee);
+        navigate(routes.list_company);
         //console.log(res);
       })
       .catch(err => {

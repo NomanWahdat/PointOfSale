@@ -12,7 +12,7 @@ import routes from "routes/paths";
 
 const columns = [
   {
-    accessor: "billNumber",
+    accessor: "billNumberr",
     Header: "Id",
     headerProps: { className: "pe-1 invoice-header" },
     cellProps: {
