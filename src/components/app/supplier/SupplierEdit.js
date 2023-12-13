@@ -54,7 +54,7 @@ export default function SupplierEdit() {
 
   return (
     <Card className="mb-5 w-75 ms-5 p-3 text-center">
-      <p className="h3 m-3">Update Customer</p>
+      <p className="h3 m-3">Update Supplier</p>
       <SupplierFrom
         onSubmit={onSubmit}
         isEdit={true}

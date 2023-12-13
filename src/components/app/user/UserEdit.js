@@ -50,7 +50,7 @@ export default function UserEdit() {
 
   return (
     <Card className="mb-5 w-75 ms-5 p-3">
-      <p className="h3 m-3">Update Customer</p>
+      <p className="h3 m-3">Update Employee</p>
       <UserForm
         onSubmit={onSubmit}
         isEdit={true}

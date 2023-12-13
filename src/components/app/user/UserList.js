@@ -138,7 +138,7 @@ const UserList = () => {
           <Card className="mb-3 w-100">
             <Card.Header>
               <AdvanceTableHeader
-                title={"Products"}
+                title={"Employee"}
                 table
                 isNew
                 isSearch
