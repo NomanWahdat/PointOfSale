@@ -1,36 +1,35 @@
+// File Description: This component displays a list of companies in a table format.
+
+import React, { useEffect, useState } from "react";
+import { Card, Dropdown, Spinner } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AdvanceTable from "components/common/advance-table/AdvanceTable";
 import AdvanceTableHeader from "components/common/advance-table/AdvanceTableHeader";
 import AdvanceTablePagination from "components/common/advance-table/AdvanceTablePagination";
 import AdvanceTableWrapper from "components/common/advance-table/AdvanceTableWrapper";
 import CardDropdown from "components/common/CardDropdown";
-import React, { useEffect, useState } from "react";
-import { Card, Dropdown, Spinner } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import routes from "routes/paths";
 import { toast } from "react-toastify";
 import { getCompanyList } from "@EndPoint/getCalls";
-//import Import from "./import";
+import routes from "routes/paths";
 
 const CompanyList = () => {
+  // Define table columns for company data display
   const columns = [
     {
       accessor: "name",
       Header: "Name",
       headerProps: { className: "pe-1 invoice-header" },
-      cellProps: {
-        className: "py-2"
-      }
+      cellProps: { className: "py-2" }
     },
     {
       accessor: "phoneNumber",
       Header: "Number",
       headerProps: { className: "pe-1 invoice-header" },
-      cellProps: {
-        className: "py-2"
-      }
+      cellProps: { className: "py-2" }
     },
+    // Cell for displaying actions (Edit option)
     {
       accessor: "_id",
       disableSortBy: true,
@@ -41,9 +40,7 @@ const CompanyList = () => {
           </div>
         );
       },
-      cellProps: {
-        className: "text-center"
-      },
+      cellProps: { className: "text-center" },
       Cell: rowData => {
         const { _id } = rowData.row.values;
         return (
@@ -52,6 +49,7 @@ const CompanyList = () => {
             style={{ background: "orange" }}
           >
             <div className="py-2">
+              {/* Dropdown option for editing company */}
               <Dropdown.Item
                 onClick={() => {
                   navigate("/edit-company/" + _id);
@@ -65,13 +63,17 @@ const CompanyList = () => {
       }
     }
   ];
+
+  // State variables for managing company data and loading status
   const [globalFilter, setGlobalFilter] = useState("");
   const [customer, setCustomer] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { user } = useSelector(store => store.user);
 
+  // Accessing user information from Redux store
+  const { user } = useSelector(store => store.user);
   const navigate = useNavigate();
 
+  // Function to fetch the list of companies
   const getCustomer = () => {
     setLoading(true);
     getCompanyList("Bearer " + user.token, "1")
@@ -85,9 +87,11 @@ const CompanyList = () => {
   };
 
   useEffect(() => {
+    // Fetch companies on component mount or when user information changes
     getCustomer();
   }, [user]);
 
+  // Function to filter values based on user input
   function findInValues(arr, value) {
     value = String(value).toLowerCase();
     return arr.filter(o =>
@@ -99,7 +103,7 @@ const CompanyList = () => {
 
   return (
     <div className="justify-content-center">
-      {!loading ? (
+      {!loading ? ( // Render table when data is available, otherwise show a loading spinner
         <AdvanceTableWrapper
           columns={columns}
           data={
@@ -113,6 +117,7 @@ const CompanyList = () => {
         >
           <Card className="mb-3 w-100">
             <Card.Header>
+              {/* Table header with search functionality and add option */}
               <AdvanceTableHeader
                 title={"Products"}
                 table
@@ -126,6 +131,7 @@ const CompanyList = () => {
               />
             </Card.Header>
             <Card.Body className="p-0">
+              {/* Actual table to display company data */}
               <AdvanceTable
                 table
                 headerClassName="bg-200 text-900 text-nowrap align-middle"
@@ -137,6 +143,7 @@ const CompanyList = () => {
               />
             </Card.Body>
             <Card.Footer>
+              {/* Pagination controls for the table */}
               <AdvanceTablePagination table />
             </Card.Footer>
           </Card>

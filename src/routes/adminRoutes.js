@@ -1,3 +1,5 @@
+// File Description: Defines the routes accessible to admin users along with role-based access.
+
 import { USER_TYPE } from "data/constants";
 import routes from "./paths";
 import {

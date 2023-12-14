@@ -1,13 +1,15 @@
+// File Description: Defines the routing logic and layout for authenticated and unauthenticated users.
+
 import React, { useContext, useEffect } from "react";
 import is from "is_js";
 import AppContext from "context/Context";
 import { Route, Routes } from "react-router-dom";
 import routes from "../routes/paths";
-import AuthSimpleLayout from "./AuthSimpleLayout";
+import AuthSimpleLayout from "./AuthSimpleLayout"; // Layout for authentication pages
 import SimpleLogin from "../components/authentication/Login";
 import NotFound from "../components/pages/NotFound";
 import { useSelector } from "react-redux";
-import MainLayout from "./MainLayout";
+import MainLayout from "./MainLayout"; // Main layout for authenticated users
 import Dashboard from "components/dashboard";
 import AddEmployee from "components/app/user/UserAdd";
 import UserEdit from "components/app/user/UserEdit";
@@ -31,6 +33,8 @@ const Layout = () => {
   const HTMLClassList =
     document.getElementsByTagName("html")[0].classList;
   useContext(AppContext);
+
+  // Detect and add classes based on user's browser for styling purposes
   useEffect(() => {
     if (is.windows()) {
       HTMLClassList.add("windows");
@@ -42,6 +46,7 @@ const Layout = () => {
       HTMLClassList.add("firefox");
     }
   }, [HTMLClassList]);
+
   return (
     <>
       <Routes>

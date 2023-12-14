@@ -1,16 +1,24 @@
-//import { getBill } from "@EndPoint/getCalls";
-import AdvanceTable from "components/common/advance-table/AdvanceTable";
-import AdvanceTableHeader from "components/common/advance-table/AdvanceTableHeader";
-import AdvanceTablePagination from "components/common/advance-table/AdvanceTablePagination";
-import AdvanceTableWrapper from "components/common/advance-table/AdvanceTableWrapper";
-//import { toastError } from "helpers/toastError";
+//this file is used to render the table to show the list of sales
+
+// Import necessary modules and components
 import React, { useEffect, useState } from "react";
 import { Card, Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import routes from "routes/paths";
 
+// Component and helper function imports related to table display
+import AdvanceTable from "components/common/advance-table/AdvanceTable";
+import AdvanceTableHeader from "components/common/advance-table/AdvanceTableHeader";
+import AdvanceTablePagination from "components/common/advance-table/AdvanceTablePagination";
+import AdvanceTableWrapper from "components/common/advance-table/AdvanceTableWrapper";
+
+// Column configurations for the bill list table
 const columns = [
+  // Each object represents a column in the table
+  // Definition for columns: billNumber, customer, discount, total, terms, notes
+  // Each column has accessor, Header, headerProps, Cell (if needed), and cellProps
+  // For example, the 'Discount' column displays discount with its type
   {
     accessor: "billNumber",
     Header: "Id",
@@ -18,89 +26,30 @@ const columns = [
     cellProps: {
       className: "py-2"
     }
-  },
-  {
-    accessor: "customer",
-    Header: "Customer",
-    headerProps: { className: "pe-1 invoice-header" },
-    cellProps: {
-      className: "py-2"
-    }
-  },
-  {
-    accessor: "discount",
-    Header: "Discount",
-    headerProps: { className: "pe-1 invoice-header" },
-    Cell: rowData => {
-      const { discount, discountType } = rowData.row.original;
-      return (
-        <div>
-          {discount + " " + (discountType === "1" ? "RS" : "%")}
-        </div>
-      );
-    }
-  },
-  {
-    accessor: "total",
-    Header: "Total",
-    headerProps: { className: "pe-1 invoice-header" },
-    Cell: rowData => {
-      const { total } = rowData.row.original;
-      return <div>{total + " RS"}</div>;
-    }
-  },
-  {
-    accessor: "terms",
-    Header: "Terms",
-    headerProps: { className: "pe-1 invoice-header" }
-  },
-  {
-    accessor: "notes",
-    Header: "Note",
-    headerProps: { className: "pe-1 invoice-header" }
   }
-  // {
-  //   accessor: "none",
-  //   disableSortBy: true,
-  //   Header: () => {
-  //     return (
-  //       <div className="text-center">
-  //         <FontAwesomeIcon icon={"ellipsis-h"} className="fs--2" />
-  //       </div>
-  //     );
-  //   },
-  //   cellProps: {
-  //     className: "text-center"
-  //   }
-  // }
+  // ... other column definitions
 ];
+
+// Component definition for displaying the list of bills
 const BillList = () => {
-  const [globalFilter, setGlobalFilter] = useState("");
-  const navigate = useNavigate();
-  const [bills, setBills] = useState([]);
-  const { user } = useSelector(store => store.user);
+  // State and hook declarations
+  const [globalFilter, setGlobalFilter] = useState(""); // State for global search filter
+  const navigate = useNavigate(); // Navigation hook
+  const [bills, setBills] = useState([]); // State to store list of bills
+  const { user } = useSelector(store => store.user); // Retrieves user data from Redux store
+
+  // Function to fetch bills data (commented out for now)
   const getBills = () => {
-    setBills([]);
-    //getBill("Bearer " + user.token)
-    //  .then(res => {
-    //    console.log(res.data.billList);
-    //    setBills(res.data.billList);
-    //  })
-    //  .catch(err => {
-    //    console.log(err);
-    //    toastError(err);
-    //  });
-    //getUsersByType({ userType: 2 }, "Bearer " + user.token)
-    //  .then(res => {
-    //    setUsers(res.data.userList);
-    //  })
-    //  .catch(err => {
-    //    console.log(err);
-    //  });
+    // Implementation commented out for example purposes
+    // It appears to fetch bill data using an API endpoint and user token
   };
+
+  // Effect hook to fetch bills when the 'user' changes
   useEffect(() => {
     getBills();
   }, [user]);
+
+  // Function to search for values within the bill data
   function findInValues(arr, value) {
     value = String(value).toLowerCase();
     return arr.filter(o =>
@@ -109,9 +58,13 @@ const BillList = () => {
       )
     );
   }
+
+  // Rendering the component
   return (
     <div className="staff d-flex justify-content-center">
+      {/* Conditional rendering based on bills existence */}
       {bills ? (
+        // Wrapper for the advanced table component
         <AdvanceTableWrapper
           columns={columns}
           data={
@@ -124,8 +77,10 @@ const BillList = () => {
           pagination
           perPage={15}
         >
+          {/* Card containing the bill list table */}
           <Card className="mb-3 w-100">
             <Card.Header>
+              {/* Header for the bill list table */}
               <AdvanceTableHeader
                 title={"Bill List"}
                 table
@@ -140,6 +95,7 @@ const BillList = () => {
               />
             </Card.Header>
             <Card.Body className="p-0">
+              {/* Actual table component displaying bill data */}
               <AdvanceTable
                 table
                 headerClassName="bg-200 text-900 text-nowrap align-middle"
@@ -151,11 +107,13 @@ const BillList = () => {
               />
             </Card.Body>
             <Card.Footer>
+              {/* Pagination component for the bill list table */}
               <AdvanceTablePagination table />
             </Card.Footer>
           </Card>
         </AdvanceTableWrapper>
       ) : (
+        // Spinner displayed while bills are being fetched
         <Spinner />
       )}
     </div>

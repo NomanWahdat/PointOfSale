@@ -1,3 +1,6 @@
+// File Description: Defines application route paths
+
+// Define various route paths used in the application
 const routes = {
   errors_404: "errors/404",
   errors_500: "errors/500",
@@ -37,4 +40,5 @@ const routes = {
   edit_sale: "/edit-sale/:_id",
   list_sale: "/list-sale"
 };
-export default routes;
+
+export default routes; // Export the routes

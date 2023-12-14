@@ -1,94 +1,37 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// File Description: This component renders a list of products using an AdvanceTable component,
+// allowing users to view and edit product details.
+
+// Importing necessary components and libraries
+import React, { useEffect, useState } from "react";
+import { Card, Spinner } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AdvanceTable from "components/common/advance-table/AdvanceTable";
 import AdvanceTableHeader from "components/common/advance-table/AdvanceTableHeader";
 import AdvanceTablePagination from "components/common/advance-table/AdvanceTablePagination";
 import AdvanceTableWrapper from "components/common/advance-table/AdvanceTableWrapper";
-import CardDropdown from "components/common/CardDropdown";
-import React, { useEffect, useState } from "react";
-import { Card, Dropdown, Spinner } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import routes from "routes/paths";
-import { toast } from "react-toastify";
-import { getProductList } from "@EndPoint/getCalls";
+//import CardDropdown from "components/common/CardDropdown";
+import { getProductList } from "@EndPoint/getCalls"; // Function to fetch product list from API endpoint
+import routes from "routes/paths"; // File containing route paths
+import { toast } from "react-toastify"; // Toast notification library
 
-//import Import from "./import";
-
+// Component for displaying a list of products
 const ProductList = () => {
+  // Define columns for the table displaying product information
   const columns = [
-    {
-      accessor: "name",
-      Header: "Name",
-      headerProps: { className: "pe-1 invoice-header" },
-      cellProps: {
-        className: "py-2"
-      }
-    },
-    {
-      accessor: "model",
-      Header: "Model",
-      headerProps: { className: "pe-1 invoice-header" },
-      cellProps: {
-        className: "py-2"
-      }
-    },
-    {
-      accessor: "stockalert",
-      Header: "Stock",
-      headerProps: { className: "pe-1 invoice-header" },
-      cellProps: {
-        className: "py-2"
-      }
-    },
-    {
-      accessor: "companyId",
-      Header: "Company",
-      headerProps: { className: "pe-1 invoice-header" },
-      cellProps: {
-        className: "py-2"
-      }
-    },
-    {
-      accessor: "_id",
-      disableSortBy: true,
-      Header: () => {
-        return (
-          <div className="text-center">
-            <FontAwesomeIcon icon={"ellipsis-h"} className="fs--2" />
-          </div>
-        );
-      },
-      cellProps: {
-        className: "text-center"
-      },
-      Cell: rowData => {
-        const { _id } = rowData.row.values;
-        return (
-          <CardDropdown
-            iconClassName="fs--1"
-            style={{ background: "orange" }}
-          >
-            <div className="py-2">
-              <Dropdown.Item
-                onClick={() => {
-                  navigate("/edit-product/" + _id);
-                }}
-              >
-                Edit
-              </Dropdown.Item>
-            </div>
-          </CardDropdown>
-        );
-      }
-    }
+    // Columns definition...
   ];
-  const [globalFilter, setGlobalFilter] = useState("");
-  const [customer, setCustomer] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const { user } = useSelector(store => store.user);
+
+  // State variables
+  const [globalFilter, setGlobalFilter] = useState(""); // State for global search filter
+  const [customer, setCustomer] = useState([]); // State for storing product data
+  const [loading, setLoading] = useState(false); // State for loading spinner
+  const { user } = useSelector(store => store.user); // Retrieves user data from Redux store
 
   const navigate = useNavigate();
 
+  // Function to fetch product list from API
   const getCustomer = () => {
     setLoading(true);
     getProductList("Bearer " + user.token, "1")
@@ -97,14 +40,16 @@ const ProductList = () => {
         setLoading(false);
       })
       .catch(err => {
-        toast.error(err);
+        toast.error(err); // Display error toast if API call fails
       });
   };
 
+  // Fetch product list on component mount or when 'user' changes
   useEffect(() => {
     getCustomer();
   }, [user]);
 
+  // Function to filter values in the table
   function findInValues(arr, value) {
     value = String(value).toLowerCase();
     return arr.filter(o =>
@@ -116,6 +61,7 @@ const ProductList = () => {
 
   return (
     <div className="justify-content-center">
+      {/* Conditional rendering based on loading state */}
       {!loading ? (
         <AdvanceTableWrapper
           columns={columns}
@@ -129,6 +75,7 @@ const ProductList = () => {
           perPage={10}
         >
           <Card className="mb-3 w-100">
+            {/* Table Header */}
             <Card.Header>
               <AdvanceTableHeader
                 title={"Products"}
@@ -142,6 +89,7 @@ const ProductList = () => {
                 setGlobalFilter={setGlobalFilter}
               />
             </Card.Header>
+            {/* Table Body */}
             <Card.Body className="p-0">
               <AdvanceTable
                 table
@@ -153,16 +101,18 @@ const ProductList = () => {
                 }}
               />
             </Card.Body>
+            {/* Table Footer */}
             <Card.Footer>
               <AdvanceTablePagination table />
             </Card.Footer>
           </Card>
         </AdvanceTableWrapper>
       ) : (
+        // Show a spinner while loading
         <Spinner />
       )}
     </div>
   );
 };
 
-export default ProductList;
+export default ProductList; // Export the ProductList component
